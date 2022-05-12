@@ -1,0 +1,11 @@
+String s = "In Favor of the Extreme";
+size(500, 500);
+textSize(40);
+background(255);
+fill(0);
+textLeading(50);
+text(s, 0, 0, width / 3, height);
+textLeading(100);
+text(s, width / 3, 0, width / 3, height);
+textLeading(200);
+text(s, width * 2 / 3, 0, width / 3, height);
