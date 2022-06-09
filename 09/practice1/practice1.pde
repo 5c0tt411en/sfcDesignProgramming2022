@@ -1,0 +1,41 @@
+Particle p;
+
+void setup() {
+    size(500, 500);
+    noStroke();
+    p = new Particle(133.0, 150.0, 50.0, 5.0, 2.0);
+}
+
+void draw() {
+    background(0);
+    p.update();
+    p.display();
+}
+
+class Particle {
+    float x;
+    float y;
+    float d;
+    float vx;
+    float vy;
+
+    Particle(float _x, float _y, float _d, float _vx, float _vy) {
+        x = _x;
+        y = _y;
+        d = _d;
+        vx = _vx;
+        vy = _vy;
+    }
+
+    void display() {
+        ellipse(x, y, d, d);
+    }
+    void update() {
+        x += vx;
+        y += vy;
+        if (x >= width - d / 2 || x <= d / 2)
+            vx = -vx;
+        if (y >= height - d / 2 || y <= d / 2)
+            vy = -vy;
+    }
+}
